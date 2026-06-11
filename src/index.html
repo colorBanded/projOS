@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projOS</title>
+</head>
+<body>
+    <div class="menubar">
+        <div class="menubar-left">
+            <span>projOS</span>
+            <span>File</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Help</span>
+        </div>
+        <div class="menubar-right" id="datetime"></div>
+    </div>
+
+    <script>
+        const datetimeElement = document.getElementById('datetime');
+        const formatter = new Intl.DateTimeFormat([], {
+            weekday: 'short',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        });
+
+        function updateDateTime() {
+            const parts = formatter.formatToParts(new Date());
+            const weekday = parts.find((part) => part.type === 'weekday')?.value ?? '';
+            const hour = parts.find((part) => part.type === 'hour')?.value ?? '';
+            const minute = parts.find((part) => part.type === 'minute')?.value ?? '';
+            const dayPeriod = parts.find((part) => part.type === 'dayPeriod')?.value ?? '';
+
+            datetimeElement.textContent = `${weekday}   ${hour}:${minute} ${dayPeriod}`.trim();
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
