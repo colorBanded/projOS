@@ -10,15 +10,53 @@
     <div class="menubar-wrapper">
     <div class="menubar">
         <div class="menubar-left">
-            <span>projOS</span>
+            <strong>projOS</strong>
             <span>File</span>
             <span>Edit</span>
             <span>View</span>
             <span>Help</span>
         </div>
-        <div class="menubar-right" id="datetime"></div>
+        <div class="menubar-right">
+            <span id="datetime"></span>
+            <img src="../img/icons/search.png" alt="Search">
+            
+        </div>
     </div>
 </div>
+
+    <div class="dock">
+        <div class="dock-item">
+            <img src="../img/icons/applications/finder.png" alt="Finder">
+            <div class="dock-label">Finder</div>
+        </div>
+        <div class="dock-item">
+            <img src="../img/icons/applications/chrome.png" alt="Chrome">
+            <div class="dock-label">Chrome</div>
+        </div>
+        <div class="dock-item">
+            <img src="../img/icons/applications/mail.png" alt="Mail">
+            <div class="dock-label">Mail</div>
+        </div>
+        <div class="dock-item">
+            <img src="../img/icons/applications/messages.png" alt="Messages">
+            <div class="dock-label">Messages</div>
+        </div>
+        <div class="dock-divider"></div>
+        <div class="dock-item">
+            <img src="../img/icons/applications/notes.png" alt="Notes">
+            <div class="dock-label">Notes</div>
+        </div>
+        <div class="dock-item">
+            <img src="../img/icons/applications/reminders.png" alt="Reminders">
+            <div class="dock-label">Reminders</div>
+        </div>
+        <div class="dock-divider"></div>
+        <div class="dock-item">
+            <img src="../img/icons/applications/trash.png" alt="Trash">
+            <div class="dock-label">Trash</div>
+        </div>
+    </div>
+
     <script>
         const datetimeElement = document.getElementById('datetime');
         const formatter = new Intl.DateTimeFormat([], {
