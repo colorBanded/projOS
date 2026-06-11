@@ -7,6 +7,7 @@
     <title>projOS</title>
 </head>
 <body>
+    <div class="menubar-wrapper">
     <div class="menubar">
         <div class="menubar-left">
             <span>projOS</span>
@@ -17,7 +18,7 @@
         </div>
         <div class="menubar-right" id="datetime"></div>
     </div>
-
+</div>
     <script>
         const datetimeElement = document.getElementById('datetime');
         const formatter = new Intl.DateTimeFormat([], {
